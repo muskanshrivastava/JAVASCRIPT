@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--  ----------------------------------- OWN CSS STYLE LINK ------------------------------------------------- -->
+    <link rel="stylesheet" href="webPageCSS.css">
+
+    <!-- ----------------- SWEET ALERT LINK for Successful Message Alert ----------------------------------------- -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!--  ----------------------------------- TITLE ------------------------------------------------- -->
+
+    <title>PROJECT</title>
+</head>
+
+<body>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!--  --------------------------------- LOGIN PAGE HTML CODE ---------------------------------------------- -->
+
+    <div class="container">
+        <form  method="post" class="form" id="loginForm">
+        <!-- FORM HEADER -->
+        <div class="head">
+            <h2>LOGIN</h2>
+        </div>
+            <!-- USERNAME DIV -->
+            <div class="username login">
+                <label for="username">Username</label>
+                <input type="text" id="name" placeholder="username" class="form-control" >
+                <small></small>
+            </div>
+
+            <!-- PASSWORD DIV -->
+            <div class="password login">
+                <label for="password">Password</label>
+                <input type="password" id="pass" placeholder="password" class="form-control" >
+                <small></small>
+            </div>
+
+            <div id="submit">
+                <input type="submit" id="submitBtn" class="button" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <!--  ----------------------------------- OWN JAVASCRIPT LINK ------------------------------------------------ -->
+    <script src="webPageJS.js"></script>
+
+</body>
+
+</html>

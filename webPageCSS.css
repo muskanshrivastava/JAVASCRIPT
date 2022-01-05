@@ -1,0 +1,124 @@
+/* Google FOnt Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins';
+}
+
+body{
+    padding: 10px ;
+    /* margin: 70px 10px; */
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url('bg.jfif');
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* z-index: -1; */
+    
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 20px -4px;
+    height: 60vh;
+    width: 40%;
+    background-color:#e6e0e0a4;
+    margin-top: 0px ;
+    overflow: hidden;
+}
+
+.form .login input{
+   height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.575);
+    padding: 15px;
+    font-size: 16px;
+    border-width: 2px;
+    transition: all .3s ease;
+    
+}
+
+.form label{
+    color: rgba(0, 0, 0, 0.884);
+    
+}
+
+.form .login{
+    margin: 10px;
+}
+
+.form h2{
+    color: black;
+    padding:5px;
+}
+
+.login input:hover{
+    visibility: visible;
+    border: 2px solid rgba(27, 25, 26, 0.459);
+    box-shadow: 0px 1px 20px -5px;
+}
+
+#submit{
+    height: 45px;
+    margin: 45px auto;
+    width: 100%;
+}
+
+#submit input{
+    height: 100%;
+    width: 40%;
+    justify-content: center;
+    outline: none;
+    color: black;
+    background:white;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+#submit input:hover{
+    color: black;
+    background-color: #fff;
+    border: 1px solid rgb(17, 16, 16);
+    transition: all .5s ease;
+}
+
+@media (max-width: 584px){
+    .container{
+        margin-top: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        max-width: 100%;
+        /* font-size: 10px; */
+    }
+
+    form::-webkit-scrollbar{
+        width: 0;
+    }
+    
+    .container form .login{
+    width: 100%;
+    /* margin-bottom: 15px; */
+    }
+
+    .container form{
+        max-height:300px ;
+        /* overflow-y: scroll ; */
+    }
+    
+   
+}
