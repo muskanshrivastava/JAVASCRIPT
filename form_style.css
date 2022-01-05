@@ -1,0 +1,316 @@
+/* Google FOnt Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+/* Default design */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins';
+}
+
+/* Body design */
+body{
+    padding: 10px ;
+    margin: 70px 10px;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg,#71b7e6,#9b59b6);
+}
+
+/* Container class design */
+.container{
+    max-width: 700px;
+    width: 100%;
+    display: flexbox;
+    background-color: white;
+    padding: 25px, 30px;
+    border-radius: 5px;
+}
+
+/* Form Header Design  */
+.header{
+    position: relative;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+/* Form Header Color Design  */
+.container h1::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,#71b7e6,#9b59b6) ;
+    height: 3px;
+    width: 50px;
+}
+
+
+/* Form Design */
+.container form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+/* Div Class (form-design) Style */
+.container form .form-design{
+    width: calc(100% / 2 - 20px);
+    margin-bottom: 15px;
+}
+
+/* Input Style */
+.container form .form-design input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    font-size: 16px;
+    border-width: 2px;
+    transition: all .3s ease;
+}
+
+.container form .form-design input :focus,
+.container form .form-design input :valid{
+    border-color: #9b59b6;
+}
+
+/* Hobby Style */
+#hobby{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    width: 50%;
+    padding: 15px;
+    margin: 0;
+    display:list-item;
+    list-style: none;
+}
+
+#hobby input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 10px;
+    border-width: 2px;
+    transition: all .3s ease;
+     
+    
+    
+}
+
+#hobby input[type='checkbox']{
+    margin: 0;
+    width: 10%;
+    height: fit-content;
+    align-items: center;
+}
+
+#hobby li{
+    list-style-type: none;
+    display: block;
+    
+    align-items: center;
+}
+
+#hobby ul{
+     display: block;
+    justify-content: left;
+    
+}
+
+/* Span Style */
+.container form .form-design .details{
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+    
+}
+
+/* Gender Div Style */
+form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Gender Category Style  */
+.category{
+    width: 80%;
+    display: flex;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+/* Label Style */
+.category label{
+    display: flex;
+    align-items: center;
+}
+
+/* Gender Radio Button Style */
+.category .dot{
+    height: 18px;
+    width: 18px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    margin-right: 10px;
+    transition: all .3s ease;
+}
+
+#dot-1:checked ~ .category label .one, 
+#dot-2:checked ~ .category label .two{
+    border-color: #d9d9d9;
+    background: #9b59b6;
+}
+
+form input[type="radio"]{
+    display: none;
+}
+
+/* Checkbox Button Style */
+#check{
+    display: block;
+    justify-content: left;
+}
+
+/* Success Message Class Style */
+.form-design.success{
+    border-color: 2px solid #2ecc71;
+    visibility: visible;
+}
+
+/* Error Message Class Style */
+.form-design.error input{
+    border-color: 2px solid #e74c3c;
+    visibility: visible;
+}
+
+/* Error Message Small tag Style */
+.form-design small{
+    font-weight: bold;
+    color: red;
+    visibility: hidden;
+}
+.form-design.error small{
+    visibility: visible;
+}
+
+/* Submit Button Style */
+#submit{
+    height: 45px;
+    margin: 45px auto;
+    width: 100%;
+    
+}
+
+#submit input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: white;
+    background:brown;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+#submit input:disabled {
+    background-color: rgba(128, 128, 128, 0.452);
+}
+
+/* #submit input:hover{
+    background: linear-gradient(-135deg,#71b7e6,#9b59b6);
+} */
+
+
+/* Media Query for Responsive Form */
+@media (max-width: 584px){
+    .container{
+        max-width: 100%;
+    }
+
+    .container form .form-design{
+    width: 100%;
+    margin-bottom: 15px;
+    }
+    
+    .category{
+    width: 100%;
+    }
+
+    .container form{
+        max-height:300px ;
+        overflow-y: scroll ;
+    }
+
+    form::-webkit-scrollbar{
+        width: 0;
+    }
+    
+    body{
+    padding: 10px ;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    }
+}
+
+.form-error{
+    font-weight: bold;
+    color: red;
+}
+
+
+
+/* .form-design{
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.form-design input{
+    width: 30%;
+    padding: 8px 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 14px;
+
+}
+.form-design  select{
+    width: 30%;
+    padding: 8px 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 14px;
+}
+
+
+#submit input{
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: #fff;
+    height: 40px;
+    width: 100px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 4px 3px 9px -4px grey;
+    padding: 0;
+}
+
+
+#submit input:hover{
+    background-color: black;
+    color: white;
+    transition: all .5s ease-in-out;
+    box-shadow: 4px 3px 9px -4px black;
+} */

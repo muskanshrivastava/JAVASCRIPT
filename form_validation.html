@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- OWN CSS Style  Link -->
+    <!-- <link rel="stylesheet" href="form_validation_style.css"> -->
+
+    <!-- SWEET ALERT LINK for Successful Message Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- ------------------------------------- OWN CSS STYLE CODE ------------------------------------------------ -->
+    <style>
+        /* Google FOnt Link */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+        /* Default design */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins';
+        }
+
+        /* Body design */
+        body {
+            padding: 10px;
+            margin: 70px 10px;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        }
+
+        /* Container class design */
+        .container {
+            max-width: 700px;
+            width: 100%;
+            display: flexbox;
+            background-color: white;
+            padding: 25px, 30px;
+            border-radius: 5px;
+        }
+
+        /* Form Header Design  */
+        .header {
+            position: relative;
+            font-size: 35px;
+            font-weight: 500;
+        }
+
+        /* Form Header Color Design  */
+        .container h1::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            height: 3px;
+            width: 50px;
+        }
+
+
+        /* Form Design */
+        .container form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0 12px 0;
+        }
+
+        /* Div Class (form-design) Style */
+        .container form .form-design {
+            width: calc(100% / 2 - 20px);
+            margin-bottom: 15px;
+        }
+
+        /* Input Style */
+        .container form .form-design input {
+            height: 45px;
+            width: 100%;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            font-size: 16px;
+            border-width: 2px;
+            transition: all .3s ease;
+        }
+
+        .container form .form-design input :focus,
+        .container form .form-design input :valid {
+            border-color: #9b59b6;
+        }
+
+        /* Hobby Style */
+        #hobby {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            width: 50%;
+            padding: 15px;
+            margin: 0;
+            display: list-item;
+            list-style: none;
+        }
+
+        #hobby input {
+            height: 45px;
+            width: 100%;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 10px;
+            border-width: 2px;
+            transition: all .3s ease;
+
+
+
+        }
+
+        #hobby input[type='checkbox'] {
+            margin: 0;
+            width: 10%;
+            height: fit-content;
+            align-items: center;
+        }
+
+        #hobby li {
+            list-style-type: none;
+            display: block;
+
+            align-items: center;
+        }
+
+        #hobby ul {
+            display: block;
+            justify-content: left;
+
+        }
+
+        /* Span Style */
+        .container form .form-design .details {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+
+        }
+
+        /* Gender Div Style */
+        form .gender-details .gender-title {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        /* Gender Category Style  */
+        .category {
+            width: 80%;
+            display: flex;
+            margin: 14px 0;
+            justify-content: space-between;
+        }
+
+        /* Label Style */
+        .category label {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Gender Radio Button Style */
+        .category .dot {
+            height: 18px;
+            width: 18px;
+            background: #d9d9d9;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            margin-right: 10px;
+            transition: all .3s ease;
+        }
+
+        #dot-1:checked~.category label .one,
+        #dot-2:checked~.category label .two {
+            border-color: #d9d9d9;
+            background: #9b59b6;
+        }
+
+        form input[type="radio"] {
+            display: none;
+        }
+
+        /* Checkbox Button Style */
+        #check {
+            display: block;
+            justify-content: left;
+        }
+
+        /* Success Message Class Style */
+        .form-design.success {
+            border-color: 2px solid #2ecc71;
+            visibility: visible;
+        }
+
+        /* Error Message Class Style */
+        .form-design.error input {
+            border-color: 2px solid #e74c3c;
+            visibility: visible;
+        }
+
+        /* Error Message Small tag Style */
+        .form-design small {
+            font-weight: bold;
+            color: red;
+            visibility: hidden;
+        }
+
+        .form-design.error small {
+            visibility: visible;
+        }
+
+        /* Submit Button Style */
+        #submit {
+            height: 45px;
+            margin: 45px auto;
+            width: 100%;
+
+        }
+
+        #submit input {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            color: white;
+            background: brown;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        #submit input:disabled {
+            background-color: rgba(128, 128, 128, 0.452);
+        }
+
+
+        /* Media Query for Responsive Form */
+        @media (max-width: 584px) {
+            .container {
+                max-width: 100%;
+            }
+
+            .container form .form-design {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .category {
+                width: 100%;
+            }
+
+            .container form {
+                max-height: 300px;
+                overflow-y: scroll;
+            }
+
+            form::-webkit-scrollbar {
+                width: 0;
+            }
+
+            body {
+                padding: 10px;
+                margin: 0;
+                position: absolute;
+                top: 0;
+            }
+        }
+
+        .form-error {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+
+    <!-- TITLE of FORM Page -->
+    <title>Form Validation</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Form Header -->
+        <div class="header">
+            <h>Form Validation</h1>
+        </div>
+
+        <!-- HTML Form -->
+        <form class='form' id="form" method="POST" action="response.php">
+
+            <!-- First Name -->
+            <div class="form-design">
+                <label>First Name </label>
+                <input type="text" id="fname" name="" placeholder="First Name" class="form-control">
+                <small>Error Message</small>
+            </div>
+
+            <!--  Last Name -->
+            <div class="form-design">
+                <span class="details">Last Name </span>
+                <input type="text" id="lname" name="" placeholder="Last Name" class="form-control">
+                <small>Error Message</small>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-design">
+                <input type="radio" name="gender" id="dot-1" checked>
+                <input type="radio" name="gender" id="dot-2">
+                <span class="gender-title">Gender </span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span id="gender">Male </span>
+                        <span class="form-error"></span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span id="gender">Female </span>
+                        <span class="form-error"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-design">
+                <span class="details">Email </span>
+                <input type="email" id="email" name="" placeholder="Enter Your Email" class="form-control">
+                <small>Error Message</small>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-design">
+                <span class="details">Phone Number</span>
+                <input type="tel" id="phone" name="" placeholder="Mobile Number" class="form-control">
+                <small>Error Message</small>
+            </div>
+
+
+            <!-- Password -->
+            <div class="form-design ">
+                <span class="details">Password </span>
+                <input type="password" id="pass" name="" placeholder="Password" class="form-control" autocomplete="off">
+                <small>Error Message</small>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-design">
+                <span class="details">Confirm Password </span>
+                <input type="password" id="confirm-password" name="" placeholder="Confirm Password" class="form-control"
+                    autocomplete="off">
+                <small>Error Message</small>
+            </div>
+
+            <!-- Hobby -->
+            <div class="form-design" id="hobby">
+                <span class="details">Hobby </span>
+                <ul>
+                    <li><input name="hobby" type="checkbox">Football</input></li>
+                    <li><input name="hobby" type="checkbox">Coding</input></li>
+                    <li><input name="hobby" type="checkbox">Cricket</input> </li>
+                    <li><input name="hobby" type="checkbox">Painting</input></li>
+
+                </ul>
+            </div>
+
+            <!-- Terms and Condition Check -->
+            <div id="check">
+                <input type="checkbox" id="checkButton" name="" value="check" onclick="check(this)"> Terms and
+                Conditions are required to accept. <span class="form-error"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <div id="submit" class="form-design">
+                <input class="button" type="submit" id="submitButton" disabled name="" value="Submit Now">
+            </div>
+
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <!-- OWN JavaScript link -->
+    <!-- <script src="form_validation_script.js"></script> -->
+
+    <!-- ------------------------------------------ OWN JAVASCRIPT CODE --------------------------------------------- -->
+    <script>
+        var form = document.getElementById('form')
+        var fname = document.getElementById('fname')
+        var lname = document.getElementById('lname')
+        var email = document.getElementById('email')
+        var phone = document.getElementById('phone')
+        var password = document.getElementById('pass')
+        var confirmPassword = document.getElementById('confirm-password')
+
+        // Event Listner function
+        form.addEventListener('submit', (event) => {
+            // event.preventDefault();
+
+            if (validate()) {
+                alert("Form Successfully Submitted!")
+                // location.reload()
+            }
+
+        })
+
+        // Function of Form Validation
+        function validate() {
+
+            var fnameVal = document.getElementById('fname').value.trim()
+            var lnameVal = document.getElementById('lname').value.trim()
+            var emailVal = document.getElementById('email').value.trim()
+            var phoneVal = document.getElementById('phone').value.trim()
+            var passwordVal = document.getElementById('pass').value.trim()
+            var confirmPasswordVal = document.getElementById('confirm-password').value.trim()
+
+            var regex = /^[a-zA-Z]+[^0-9][a-zA-Z]+[^0-9]$/;
+            var passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            flag = 0;
+
+            //  First name validation check
+            if (fnameVal === "") {
+                setErrorMsg(fname, 'This field cannot be blank');
+                document.getElementById('fname').style.borderColor = "red";
+                flag = 0;
+            }
+            else if (fnameVal.length < 3) {
+                setErrorMsg(fname, 'Length of first name is too short');
+                document.getElementById('fname').style.borderColor = "red";
+                flag = 0;
+            }
+            else if (!regex.test(fnameVal)) {
+                setErrorMsg(fname, 'This field cannot contain numbers or any special characters');
+                document.getElementById('fname').style.borderColor = "red";
+                flag = 0;
+            }
+            else {
+                setSuccsessMsg(fname);
+                document.getElementById('fname').style.borderColor = "green";
+                flag = 1;
+            }
+
+
+            //  Last name validation check
+            if (lnameVal === "") {
+                setErrorMsg(lname, 'This field cannot be blank');
+                document.getElementById('lname').style.borderColor = "red";
+                flag = 0;
+            } else if (lnameVal.length <= 2) {
+                setErrorMsg(lname, 'Length of last name is too short');
+                document.getElementById('lname').style.borderColor = "red";
+            }
+            else if (!regex.test(lnameVal)) {
+                setErrorMsg(lname, 'This field cannot contain numbers or any special characters');
+                document.getElementById('lname').style.borderColor = "red";
+                flag = 0;
+            }
+            else {
+                setSuccsessMsg(lname);
+                document.getElementById('lname').style.borderColor = "green";
+                flag = 1;
+            }
+
+            //  Email validation check
+            if (emailVal === "") {
+                setErrorMsg(email, 'This field cannot be blank');
+                document.getElementById('email').style.borderColor = "red";
+                flag = 0;
+            }
+            else if (isEmail(emailVal)) {
+                setErrorMsg(email, 'Invalid Email');
+                document.getElementById('email').style.borderColor = "red";
+                flag = 0;
+            }
+            else {
+                setSuccsessMsg(email);
+                document.getElementById('email').style.borderColor = "green";
+                flag = 1;
+            }
+
+            //  Phone Number validation check
+            if (phoneVal === "") {
+                setErrorMsg(phone, 'This field cannot be blank');
+                document.getElementById('phone').style.borderColor = "red";
+                flag = 0;
+            }
+            else if (phoneVal.length != 10) {
+                setErrorMsg(phone, 'Invalid Mobile Number');
+                document.getElementById('phone').style.borderColor = "red";
+                flag = 0;
+            }
+            else {
+                setSuccsessMsg(phone);
+                document.getElementById('phone').style.borderColor = "green";
+                flag = 1;
+            }
+
+            //  Password validation check
+            if (passwordVal === "") {
+                setErrorMsg(password, 'This field cannot be blank');
+                document.getElementById('pass').style.borderColor = "red";
+                flag = 0;
+            }
+            else if (passwordVal.length < 8) {
+                setErrorMsg(password, 'Length of password must be atleast 8 characters');
+                document.getElementById('password').style.borderColor = "red";
+                flag = 0;
+            }
+            else if (!passwordRegex.test(passwordVal)) {
+                setErrorMsg(password, 'Password must contain atleast one Capital letter, one digit and one special character');
+                document.getElementById('pass').style.borderColor = "red";
+                flag = 0;
+            }
+            else {
+                setSuccsessMsg(password);
+                document.getElementById('pass').style.borderColor = "green";
+                flag = 1;
+            }
+
+            //  Confirm Password validation check
+            if (confirmPasswordVal === "") {
+                setErrorMsg(confirmPassword, 'This field cannot be blank');
+                document.getElementById('confirm-password').style.borderColor = "red";
+                flag = 0;
+            }
+            else if (confirmPasswordVal != passwordVal) {
+                setErrorMsg(confirmPassword, 'Password not matched');
+                document.getElementById('confirm-password').style.borderColor = "red";
+                flag = 0;
+            }
+            else if (!passwordRegex.test(confirmPasswordVal)) {
+                setErrorMsg(confirmPassword, 'Password must contain atleast one Capital letter, one digit and one special character');
+                document.getElementById('confirm-password').style.borderColor = "red";
+                flag = 0;
+            }
+            else {
+                setSuccsessMsg(confirmPassword);
+                document.getElementById('confirm-password').style.borderColor = "green";
+                flag = 1;
+            }
+
+
+            if (flag === 1) {
+                return true;
+            }
+            else return false;
+
+        }
+
+        //  Error Message Function
+        function setErrorMsg(input, errormsg) {
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('small');
+            formControl.className = "form-design error";
+            small.innerHTML = errormsg;
+
+        }
+
+        //  Valid Input Success Message
+        function setSuccsessMsg(input) {
+            const formControl = input.parentElement;
+            formControl.className = "form-design success";
+            const small = formControl.querySelector('small');
+        }
+
+        //  Email validation Condition function
+        const isEmail = (emailVal) => {
+            var atSymbol = emailVal.indexOf('@');
+            if (atSymbol < 1) return false;
+
+            var dot = emailVal.indexOf('.');
+            if (dot <= atSymbol + 3) return false;
+
+            if (dot === emailVal.length - 1) return false;
+
+            return true;
+
+
+        }
+
+        // Check button validation function
+        function check(checkButton) {
+            if (checkButton.checked) {
+                document.getElementById("submitButton").disabled = false;
+            } else {
+                disable = true;
+                document.getElementById("submitButton").disabled = true;
+            }
+        }
+
+        function sendData() {
+            var fnameVal = document.getElementById('fname').value.trim()
+            var lnameVal = document.getElementById('lname').value.trim()
+            var emailVal = document.getElementById('email').value.trim()
+            var phoneVal = document.getElementById('phone').value.trim()
+            var passwordVal = document.getElementById('pass').value.trim()
+            var confirmPasswordVal = document.getElementById('confirm-password').value.trim()
+
+            var req = new XMLHttpRequest();
+            req.open("POST", "response.php", true);
+            req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            req.onreadystatechange = function () {
+                if (req.readyState == 4 && req.status == 200) {
+                    console.log('AJAX');
+                    document.getElementById('result').innerHTML = req.responseText
+                }
+            }
+
+            req.send('fname = ' + fnameVal + "&lname = " + lnameVal +
+                'email = ' + emailVal + "&phone = " + phoneVal +
+                'password = ' + passwordVal + "&confirmpassword = " + confirmPasswordVal
+            );
+        }
+
+
+
+    </script>
+</body>
+
+</html>
