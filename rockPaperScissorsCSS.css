@@ -1,0 +1,207 @@
+/* Google FOnt Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+/* Default styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+/* Body style */
+body{
+    background-color: #24272E;
+}
+
+/* Game Header Style */
+header{
+    background-color: #fff;
+    box-shadow:1px 7px 9px 7px rgb(0 0 0 / 40%);
+}
+
+/* Game Heading Style */
+header > h1{
+    color: #24272E;
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding: 10px ;
+}
+
+/* Score Board Style */
+.scoreBoard{
+    border: 3px solid white;
+    border-radius: 4px;
+    width: 200px;
+    margin: 25px auto;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    position: relative;
+
+}
+
+/* User-Computer Badge Style */
+.badge{
+    background-color: #E2584D;
+    font-size: 14px;
+    padding: 2px 10px;
+}
+
+#userLabel{
+    position: absolute;
+    top: 20px;
+    left: -20px;
+}
+
+#computerLabel{
+    position: absolute;
+    top: 20px;
+    left: 160px;
+}
+
+/* Result Paragraph Style */
+.result{
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.result > h6{
+    position: relative;
+}
+#userResult{
+    position: absolute;
+    top: 20px;
+    left: 133px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: crimson;
+    text-shadow: 0px -2px 4px black;
+    border-bottom: 3px solid white;
+    width: 50px;
+    display: block;
+}
+
+#computerResult{
+    position: absolute;
+    top: 20px;
+    right: 140px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: crimson;
+    text-shadow: 0px -2px 4px black;
+    border-bottom: 3px solid white;
+    width: 100px;
+
+}
+
+.result > p{
+    position: relative;
+}
+
+#userChoice{
+    position: absolute;
+    top: 50px;
+    left: 135px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+#computerChoice{
+    position: absolute;
+    top: 50px;
+    right: 155px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+#result-msg{
+    /* position: absolute; */
+    top: 150px;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+/* Rock Paper Scissors Icon Style */
+.choices{
+    text-align: center;
+    margin: 190px 0;
+}
+
+.choice {
+   display: inline-block;
+}
+
+.choice i{
+    color: rgb(255, 230, 0);
+    display: inline-block;
+    margin: 0 20px;
+    padding: 25px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Icons Hover effect Style */
+.choice i:hover{
+    background: white;
+    cursor: pointer;
+    color: crimson;
+    transition: all .5s ease-out;
+}
+
+/* Make Your Move Message Style */
+#message{
+    align-items: center;
+    color: rgb(218, 100, 123);
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-shadow: 0px -2px 4px black;
+}
+
+/* Dynamically classes adding to HTML code throgh JAVASCRIPT 
+    for the WIN, LOSE, DRAW indication.
+*/
+
+/* Green background on WIN */
+.green-glow{
+    border: 5px solid green !important;
+    box-shadow: 0px 0px 20px -4px green;
+}
+.red-glow{
+    border: 5px solid red !important;
+    box-shadow: 0px 0px 20px -4px red;
+}
+.grey-glow{
+    border: 5px solid grey !important;
+    box-shadow: 0px 0px 20px -4px grey;
+}
+
+@media (max-width: 840px){
+    #computerResult{
+        font-size: 20px;
+        width: 70px;
+    }
+    #userResult{
+        font-size: 20px;
+        width: 30px;
+    }
+    #userChoice{
+        font-size: 20px;
+    }
+    #computerChoice{
+        font-size: 20px;
+    }
+}
+
+
